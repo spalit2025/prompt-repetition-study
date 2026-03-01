@@ -1,0 +1,12 @@
+# Environment & secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# Claude Code
+.claude/

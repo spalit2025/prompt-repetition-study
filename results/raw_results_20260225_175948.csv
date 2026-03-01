@@ -1,0 +1,203 @@
+model,variant,question_id,difficulty,position,run,raw_response,extracted_answer,score,needs_manual_review,input_tokens,output_tokens,latency_ms
+haiku-4.5,baseline,Q01,easy,early,1,"January 15, 2025","January 15, 2025",1.0,False,6789,10,1376
+haiku-4.5,baseline,Q01,easy,early,2,"January 15, 2025","January 15, 2025",1.0,False,6789,10,1396
+haiku-4.5,baseline,Q01,easy,early,3,"January 15, 2025","January 15, 2025",1.0,False,6789,10,1373
+haiku-4.5,baseline,Q01,easy,early,4,"January 15, 2025","January 15, 2025",1.0,False,6789,10,650
+haiku-4.5,baseline,Q01,easy,early,5,"January 15, 2025","January 15, 2025",1.0,False,6789,10,1223
+haiku-4.5,baseline,Q02,easy,early,1,MSA-2025-0892,MSA-2025-0892,1.0,False,6789,11,773
+haiku-4.5,baseline,Q02,easy,early,2,MSA-2025-0892,MSA-2025-0892,1.0,False,6789,11,690
+haiku-4.5,baseline,Q02,easy,early,3,MSA-2025-0892,MSA-2025-0892,1.0,False,6789,11,1023
+haiku-4.5,baseline,Q02,easy,early,4,MSA-2025-0892,MSA-2025-0892,1.0,False,6789,11,1079
+haiku-4.5,baseline,Q02,easy,early,5,MSA-2025-0892,MSA-2025-0892,1.0,False,6789,11,752
+haiku-4.5,baseline,Q03,easy,early,1,Three (3) years,3 years,1.0,False,6790,8,1245
+haiku-4.5,baseline,Q03,easy,early,2,Three (3) years,3 years,1.0,False,6790,8,8412
+haiku-4.5,baseline,Q03,easy,early,3,Three (3) years,3 years,1.0,False,6790,8,1014
+haiku-4.5,baseline,Q03,easy,early,4,Three (3) years,3 years,1.0,False,6790,8,12341
+haiku-4.5,baseline,Q03,easy,early,5,Three (3) years,3 years,1.0,False,6790,8,812
+haiku-4.5,baseline,Q04,easy,early,1,New York,New York,1.0,False,6798,5,12133
+haiku-4.5,baseline,Q04,easy,early,2,New York,New York,1.0,False,6798,5,737
+haiku-4.5,baseline,Q04,easy,early,3,New York,New York,1.0,False,6798,5,13146
+haiku-4.5,baseline,Q04,easy,early,4,New York,New York,1.0,False,6798,5,1288
+haiku-4.5,baseline,Q04,easy,early,5,New York,New York,1.0,False,6798,5,12155
+haiku-4.5,baseline,Q05,medium,middle,1,"$5,000,000.00","$5,000,000",1.0,False,6797,11,1305
+haiku-4.5,baseline,Q05,medium,middle,2,"$5,000,000.00","$5,000,000",1.0,False,6797,11,11652
+haiku-4.5,baseline,Q05,medium,middle,3,"$5,000,000.00","$5,000,000",1.0,False,6797,11,950
+haiku-4.5,baseline,Q05,medium,middle,4,"# Answer
+
+Five Million Dollars ($5,000,000.00)
+
+This is specified in Section 8.3 as the ""Data Breach Liability Cap"" that applies specifically to breaches of Section 10 (Data Protection) resulting in unauthorized access, disclosure, or loss of Personal Data.","$5,000,000",1.0,False,6797,68,12839
+haiku-4.5,baseline,Q05,medium,middle,5,"$5,000,000.00","$5,000,000",1.0,False,6797,11,1089
+haiku-4.5,baseline,Q06,medium,middle,1,15%,15%,1.0,False,6800,6,11670
+haiku-4.5,baseline,Q06,medium,middle,2,15%,15%,1.0,False,6800,6,639
+haiku-4.5,baseline,Q06,medium,middle,3,15%,15%,1.0,False,6800,6,11980
+haiku-4.5,baseline,Q06,medium,middle,4,15%,15%,1.0,False,6800,6,7019
+haiku-4.5,baseline,Q06,medium,middle,5,15%,15%,1.0,False,6800,6,504
+haiku-4.5,baseline,Q07,medium,middle,1,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,6794,20,12380
+haiku-4.5,baseline,Q07,medium,middle,2,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,6794,20,7101
+haiku-4.5,baseline,Q07,medium,middle,3,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,6794,20,1948
+haiku-4.5,baseline,Q07,medium,middle,4,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,6794,20,11059
+haiku-4.5,baseline,Q07,medium,middle,5,"**Mr. Dominic W. Farrell**, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,6794,21,8318
+haiku-4.5,baseline,Q08,medium,middle,1,"$500,000.00","$500,000",1.0,False,6798,9,648
+haiku-4.5,baseline,Q08,medium,middle,2,"$500,000.00","$500,000",1.0,False,6798,9,11028
+haiku-4.5,baseline,Q08,medium,middle,3,"$500,000.00","$500,000",1.0,False,6798,9,658
+haiku-4.5,baseline,Q08,medium,middle,4,"$500,000.00","$500,000",1.0,False,6798,9,12962
+haiku-4.5,baseline,Q08,medium,middle,5,"$500,000.00 per incident","$500,000",1.0,False,6798,12,806
+haiku-4.5,baseline,Q09,hard,late,1,60 days,60 days,1.0,False,6803,7,11993
+haiku-4.5,baseline,Q09,hard,late,2,60 days,60 days,1.0,False,6803,7,7223
+haiku-4.5,baseline,Q09,hard,late,3,60 days,60 days,1.0,False,6803,7,709
+haiku-4.5,baseline,Q09,hard,late,4,60 days,60 days,1.0,False,6803,7,12445
+haiku-4.5,baseline,Q09,hard,late,5,60 days,60 days,1.0,False,6803,7,795
+haiku-4.5,baseline,Q10,hard,late,1,25%,25%,1.0,False,6800,6,11987
+haiku-4.5,baseline,Q10,hard,late,2,25%,25%,1.0,False,6800,6,6857
+haiku-4.5,baseline,Q10,hard,late,3,25%,25%,1.0,False,6800,6,7049
+haiku-4.5,baseline,Q10,hard,late,4,25%,25%,1.0,False,6800,6,1973
+haiku-4.5,baseline,Q10,hard,late,5,25%,25%,1.0,False,6800,6,11295
+haiku-4.5,baseline,Q11,hard,late,1,"**Name:** Meridian Analytics Federal Services, LLC
+
+**State:** Commonwealth of Virginia","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,6801,21,1626
+haiku-4.5,baseline,Q11,hard,late,2,"# Answer
+
+**Name of Approved Sub-Processor:** Meridian Analytics Federal Services, LLC
+
+**State of Organization:** Commonwealth of Virginia","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,6801,33,11265
+haiku-4.5,baseline,Q11,hard,late,3,"# Answer
+
+**Name:** Meridian Analytics Federal Services, LLC
+
+**State of Organization:** Commonwealth of Virginia","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,6801,26,7563
+haiku-4.5,baseline,Q11,hard,late,4,"**Name of Approved Sub-Processor:** Meridian Analytics Federal Services, LLC
+
+**State of Organization:** Commonwealth of Virginia","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,6801,30,951
+haiku-4.5,baseline,Q11,hard,late,5,"**Name:** Meridian Analytics Federal Services, LLC
+
+**State of Organization:** Commonwealth of Virginia","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,6801,23,12122
+haiku-4.5,baseline,Q12,hard,late,1,120 days,120 days,1.0,False,6801,7,688
+haiku-4.5,baseline,Q12,hard,late,2,"# Answer
+
+A Force Majeure Event must persist for more than **120 days** before either Party has the right to terminate the agreement. After 120 days of continued Force Majeure Event, either Party may terminate upon 30 days' written notice.
+
+(Reference: Section 14.5)",120 days,1.0,False,6801,69,12447
+haiku-4.5,baseline,Q12,hard,late,3,"# Answer
+
+A Force Majeure Event must persist for more than **one hundred twenty (120) days** before either Party has the right to terminate the Agreement. Upon such termination, the terminating Party must provide thirty (30) days' written notice.
+
+(Reference: Section 14.5)",120 days,1.0,False,6801,67,1291
+haiku-4.5,baseline,Q12,hard,late,4,120 days,120 days,1.0,False,6801,7,12426
+haiku-4.5,baseline,Q12,hard,late,5,"# Answer
+
+A Force Majeure Event must persist for more than **one hundred twenty (120) days** before either Party has the right to terminate the agreement. After that threshold, either Party may terminate upon thirty (30) days' written notice.
+
+(See Section 14.5)",120 days,1.0,False,6801,64,1108
+haiku-4.5,baseline,Q13,medium,middle,1,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,6798,24,13034
+haiku-4.5,baseline,Q13,medium,middle,2,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,6798,24,849
+haiku-4.5,baseline,Q13,medium,middle,3,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,6798,24,11780
+haiku-4.5,baseline,Q13,medium,middle,4,"**Data Engineer:** $295.00 per hour
+
+**Project Manager:** $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,6798,26,849
+haiku-4.5,baseline,Q13,medium,middle,5,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,6798,24,12166
+haiku-4.5,vanilla,Q01,easy,early,1,"January 15, 2025","January 15, 2025",1.0,False,13572,10,708
+haiku-4.5,vanilla,Q01,easy,early,2,"January 15, 2025","January 15, 2025",1.0,False,13572,10,25069
+haiku-4.5,vanilla,Q01,easy,early,3,"January 15, 2025","January 15, 2025",1.0,False,13572,10,15928
+haiku-4.5,vanilla,Q01,easy,early,4,"January 15, 2025","January 15, 2025",1.0,False,13572,10,13830
+haiku-4.5,vanilla,Q01,easy,early,5,"January 15, 2025","January 15, 2025",1.0,False,13572,10,15014
+haiku-4.5,vanilla,Q02,easy,early,1,MSA-2025-0892,MSA-2025-0892,1.0,False,13572,11,15779
+haiku-4.5,vanilla,Q02,easy,early,2,MSA-2025-0892,MSA-2025-0892,1.0,False,13572,11,16908
+haiku-4.5,vanilla,Q02,easy,early,3,MSA-2025-0892,MSA-2025-0892,1.0,False,13572,11,824
+haiku-4.5,vanilla,Q02,easy,early,4,MSA-2025-0892,MSA-2025-0892,1.0,False,13572,11,27088
+haiku-4.5,vanilla,Q02,easy,early,5,MSA-2025-0892,MSA-2025-0892,1.0,False,13572,11,14051
+haiku-4.5,vanilla,Q03,easy,early,1,Three (3) years,3 years,1.0,False,13574,8,14621
+haiku-4.5,vanilla,Q03,easy,early,2,Three (3) years,3 years,1.0,False,13574,8,14083
+haiku-4.5,vanilla,Q03,easy,early,3,Three (3) years,3 years,1.0,False,13574,8,16054
+haiku-4.5,vanilla,Q03,easy,early,4,Three (3) years,3 years,1.0,False,13574,8,14147
+haiku-4.5,vanilla,Q03,easy,early,5,Three (3) years,3 years,1.0,False,13574,8,15121
+haiku-4.5,vanilla,Q04,easy,early,1,New York,New York,1.0,False,13590,5,14780
+haiku-4.5,vanilla,Q04,easy,early,2,New York,New York,1.0,False,13590,5,14175
+haiku-4.5,vanilla,Q04,easy,early,3,New York,New York,1.0,False,13590,5,14080
+haiku-4.5,vanilla,Q04,easy,early,4,New York,New York,1.0,False,13590,5,17346
+haiku-4.5,vanilla,Q04,easy,early,5,New York,New York,1.0,False,13590,5,12916
+haiku-4.5,vanilla,Q05,medium,middle,1,"$5,000,000.00","$5,000,000",1.0,False,13588,11,15382
+haiku-4.5,vanilla,Q05,medium,middle,2,"Five Million Dollars ($5,000,000.00)","$5,000,000",1.0,False,13588,16,14134
+haiku-4.5,vanilla,Q05,medium,middle,3,"Five Million Dollars ($5,000,000.00)","$5,000,000",1.0,False,13588,16,15164
+haiku-4.5,vanilla,Q05,medium,middle,4,"Five Million Dollars ($5,000,000.00)","$5,000,000",1.0,False,13588,16,14013
+haiku-4.5,vanilla,Q05,medium,middle,5,"$5,000,000.00","$5,000,000",1.0,False,13588,11,16371
+haiku-4.5,vanilla,Q06,medium,middle,1,15%,15%,1.0,False,13594,6,13153
+haiku-4.5,vanilla,Q06,medium,middle,2,15%,15%,1.0,False,13594,6,16665
+haiku-4.5,vanilla,Q06,medium,middle,3,15%,15%,1.0,False,13594,6,13075
+haiku-4.5,vanilla,Q06,medium,middle,4,15%,15%,1.0,False,13594,6,16440
+haiku-4.5,vanilla,Q06,medium,middle,5,15%,15%,1.0,False,13594,6,13881
+haiku-4.5,vanilla,Q07,medium,middle,1,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,13582,20,14522
+haiku-4.5,vanilla,Q07,medium,middle,2,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,13582,20,14386
+haiku-4.5,vanilla,Q07,medium,middle,3,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,13582,20,15029
+haiku-4.5,vanilla,Q07,medium,middle,4,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,13582,20,15271
+haiku-4.5,vanilla,Q07,medium,middle,5,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,13582,20,14559
+haiku-4.5,vanilla,Q08,medium,middle,1,"$500,000.00","$500,000",1.0,False,13590,9,15860
+haiku-4.5,vanilla,Q08,medium,middle,2,"$500,000.00","$500,000",1.0,False,13590,9,13107
+haiku-4.5,vanilla,Q08,medium,middle,3,"$500,000.00","$500,000",1.0,False,13590,9,15728
+haiku-4.5,vanilla,Q08,medium,middle,4,"$500,000.00","$500,000",1.0,False,13590,9,14394
+haiku-4.5,vanilla,Q08,medium,middle,5,"$500,000.00","$500,000",1.0,False,13590,9,15154
+haiku-4.5,vanilla,Q09,hard,late,1,60 days,60 days,1.0,False,13600,7,14365
+haiku-4.5,vanilla,Q09,hard,late,2,60 days,60 days,1.0,False,13600,7,15587
+haiku-4.5,vanilla,Q09,hard,late,3,60 days,60 days,1.0,False,13600,7,15092
+haiku-4.5,vanilla,Q09,hard,late,4,60 days,60 days,1.0,False,13600,7,13034
+haiku-4.5,vanilla,Q09,hard,late,5,60 days,60 days,1.0,False,13600,7,15088
+haiku-4.5,vanilla,Q10,hard,late,1,25%,25%,1.0,False,13594,6,15800
+haiku-4.5,vanilla,Q10,hard,late,2,25%,25%,1.0,False,13594,6,14261
+haiku-4.5,vanilla,Q10,hard,late,3,25%,25%,1.0,False,13594,6,14853
+haiku-4.5,vanilla,Q10,hard,late,4,25%,25%,1.0,False,13594,6,15437
+haiku-4.5,vanilla,Q10,hard,late,5,25%,25%,1.0,False,13594,6,14112
+haiku-4.5,vanilla,Q11,hard,late,1,"**Meridian Analytics Federal Services, LLC** (""MAFS""), organized under the laws of the **Commonwealth of Virginia**.","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,13596,29,15941
+haiku-4.5,vanilla,Q11,hard,late,2,"**Meridian Analytics Federal Services, LLC**, organized under the laws of the **Commonwealth of Virginia**.","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,13596,24,14433
+haiku-4.5,vanilla,Q11,hard,late,3,"**Meridian Analytics Federal Services, LLC** (""MAFS""), organized under the laws of the **Commonwealth of Virginia**.","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,13596,29,14343
+haiku-4.5,vanilla,Q11,hard,late,4,"Meridian Analytics Federal Services, LLC; Commonwealth of Virginia","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,13596,15,14239
+haiku-4.5,vanilla,Q11,hard,late,5,"Meridian Analytics Federal Services, LLC; Commonwealth of Virginia","Meridian Analytics Federal Services, LLC; Virginia",1.0,False,13596,15,15492
+haiku-4.5,vanilla,Q12,hard,late,1,More than one hundred twenty (120) days.,120 days,1.0,False,13596,13,15081
+haiku-4.5,vanilla,Q12,hard,late,2,More than one hundred twenty (120) days.,120 days,1.0,False,13596,13,14774
+haiku-4.5,vanilla,Q12,hard,late,3,More than 120 days.,120 days,1.0,False,13596,10,14143
+haiku-4.5,vanilla,Q12,hard,late,4,More than one hundred twenty (120) days.,120 days,1.0,False,13596,13,14980
+haiku-4.5,vanilla,Q12,hard,late,5,More than one hundred twenty (120) days.,120 days,1.0,False,13596,13,14265
+haiku-4.5,vanilla,Q13,medium,middle,1,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,13590,24,15366
+haiku-4.5,vanilla,Q13,medium,middle,2,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,13590,24,14373
+haiku-4.5,vanilla,Q13,medium,middle,3,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,13590,24,16579
+haiku-4.5,vanilla,Q13,medium,middle,4,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,13590,24,14277
+haiku-4.5,vanilla,Q13,medium,middle,5,"Data Engineer: $295.00 per hour
+Project Manager: $250.00 per hour",Data Engineer: $295.00/hour; Project Manager: $250.00/hour,1.0,False,13590,24,14426
+haiku-4.5,verbose,Q01,easy,early,1,"January 15, 2025","January 15, 2025",1.0,False,13578,10,13985
+haiku-4.5,verbose,Q01,easy,early,2,"January 15, 2025","January 15, 2025",1.0,False,13578,10,15745
+haiku-4.5,verbose,Q01,easy,early,3,"January 15, 2025","January 15, 2025",1.0,False,13578,10,14412
+haiku-4.5,verbose,Q01,easy,early,4,"January 15, 2025","January 15, 2025",1.0,False,13578,10,13905
+haiku-4.5,verbose,Q01,easy,early,5,"January 15, 2025","January 15, 2025",1.0,False,13578,10,14884
+haiku-4.5,verbose,Q02,easy,early,1,MSA-2025-0892,MSA-2025-0892,1.0,False,13578,11,15061
+haiku-4.5,verbose,Q02,easy,early,2,MSA-2025-0892,MSA-2025-0892,1.0,False,13578,11,15037
+haiku-4.5,verbose,Q02,easy,early,3,MSA-2025-0892,MSA-2025-0892,1.0,False,13578,11,14085
+haiku-4.5,verbose,Q02,easy,early,4,MSA-2025-0892,MSA-2025-0892,1.0,False,13578,11,15119
+haiku-4.5,verbose,Q02,easy,early,5,MSA-2025-0892,MSA-2025-0892,1.0,False,13578,11,16882
+haiku-4.5,verbose,Q03,easy,early,1,Three (3) years,3 years,1.0,False,13580,8,13129
+haiku-4.5,verbose,Q03,easy,early,2,Three (3) years,3 years,1.0,False,13580,8,14219
+haiku-4.5,verbose,Q03,easy,early,3,Three (3) years.,3 years,1.0,False,13580,9,16000
+haiku-4.5,verbose,Q03,easy,early,4,Three (3) years.,3 years,1.0,False,13580,9,14548
+haiku-4.5,verbose,Q03,easy,early,5,Three (3) years,3 years,1.0,False,13580,8,15893
+haiku-4.5,verbose,Q04,easy,early,1,New York,New York,1.0,False,13596,5,13086
+haiku-4.5,verbose,Q04,easy,early,2,New York,New York,1.0,False,13596,5,15110
+haiku-4.5,verbose,Q04,easy,early,3,New York,New York,1.0,False,13596,5,14068
+haiku-4.5,verbose,Q04,easy,early,4,New York,New York,1.0,False,13596,5,16708
+haiku-4.5,verbose,Q04,easy,early,5,New York,New York,1.0,False,13596,5,13435
+haiku-4.5,verbose,Q05,medium,middle,1,"Five Million Dollars ($5,000,000.00)","$5,000,000",1.0,False,13594,16,15206
+haiku-4.5,verbose,Q05,medium,middle,2,"Five Million Dollars ($5,000,000.00)","$5,000,000",1.0,False,13594,16,15026
+haiku-4.5,verbose,Q05,medium,middle,3,"$5,000,000.00","$5,000,000",1.0,False,13594,11,14964
+haiku-4.5,verbose,Q05,medium,middle,4,"Five Million Dollars ($5,000,000.00)","$5,000,000",1.0,False,13594,16,15392
+haiku-4.5,verbose,Q05,medium,middle,5,"Five Million Dollars ($5,000,000.00)","$5,000,000",1.0,False,13594,16,13891
+haiku-4.5,verbose,Q06,medium,middle,1,15%,15%,1.0,False,13600,6,14217
+haiku-4.5,verbose,Q06,medium,middle,2,15%,15%,1.0,False,13600,6,16039
+haiku-4.5,verbose,Q06,medium,middle,3,15%,15%,1.0,False,13600,6,14668
+haiku-4.5,verbose,Q06,medium,middle,4,15%,15%,1.0,False,13600,6,14065
+haiku-4.5,verbose,Q06,medium,middle,5,15%,15%,1.0,False,13600,6,13933
+haiku-4.5,verbose,Q07,medium,middle,1,"Mr. Dominic W. Farrell, Senior Director of Platform Reliability",Dominic W. Farrell,1.0,False,13588,20,15248

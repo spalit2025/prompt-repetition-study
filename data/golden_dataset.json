@@ -1,0 +1,292 @@
+{
+  "metadata": {
+    "document": "data/contract.md",
+    "document_word_count": 4232,
+    "document_line_count": 249,
+    "total_questions": 13,
+    "difficulty_distribution": {
+      "easy": 4,
+      "medium": 5,
+      "hard": 4
+    },
+    "position_distribution": {
+      "early": 4,
+      "middle": 6,
+      "late": 3
+    },
+    "created": "2025-02-25",
+    "version": "1.0"
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "What is the effective date of this agreement?",
+      "ground_truth": "January 15, 2025",
+      "acceptable_formats": [
+        "January 15, 2025",
+        "Jan 15, 2025",
+        "01/15/2025",
+        "1/15/2025",
+        "2025-01-15"
+      ],
+      "position": "early",
+      "position_detail": "Line 5, preamble (~2% into document)",
+      "difficulty": "easy",
+      "section": "Preamble",
+      "scoring_notes": {
+        "exact": "Any recognized date format resolving to January 15, 2025",
+        "partial": "Correct month and year but wrong day, or says '2025' without full date",
+        "incorrect": "Wrong date entirely, or confuses with amendment date (03/01/2025)"
+      },
+      "rationale": "Baseline control question. Effective date is stated prominently in the preamble, early in the document. Should be easy for all models and all variants. If repetition helps here, it suggests a general attention boost rather than positional benefit."
+    },
+    {
+      "id": "Q02",
+      "question": "What is the agreement number of this contract?",
+      "ground_truth": "MSA-2025-0892",
+      "acceptable_formats": [
+        "MSA-2025-0892"
+      ],
+      "position": "early",
+      "position_detail": "Line 3, document header (~1% into document)",
+      "difficulty": "easy",
+      "section": "Header",
+      "scoring_notes": {
+        "exact": "Exact string MSA-2025-0892",
+        "partial": "Correct prefix MSA-2025 but wrong suffix, or missing hyphens",
+        "incorrect": "Wrong number entirely or hallucinated identifier"
+      },
+      "rationale": "Tests recall of a specific alphanumeric identifier at the very top of the document. High salience, zero ambiguity. This is the easiest possible extraction and serves as a floor for model performance."
+    },
+    {
+      "id": "Q03",
+      "question": "What is the initial term length of this agreement?",
+      "ground_truth": "three (3) years",
+      "acceptable_formats": [
+        "three (3) years",
+        "3 years",
+        "three years"
+      ],
+      "position": "early",
+      "position_detail": "Line 57, Section 3.1 (~23% into document)",
+      "difficulty": "easy",
+      "section": "Section 3 - Term and Renewal",
+      "scoring_notes": {
+        "exact": "3 years in any format",
+        "partial": "Identifies the correct section but gives wrong duration, or confuses with renewal term (1 year)",
+        "incorrect": "Wrong duration entirely or confuses initial term with renewal term"
+      },
+      "rationale": "Clearly stated single value in the early portion of the document. Tests basic entity extraction from a well-structured section heading. Slightly harder than Q01/Q02 because it's further into the document and there's a nearby 'one (1) year' renewal term that could cause confusion."
+    },
+    {
+      "id": "Q04",
+      "question": "Under which state's laws is the Client (Meridian Dynamics Corporation) organized?",
+      "ground_truth": "New York",
+      "acceptable_formats": [
+        "New York",
+        "State of New York",
+        "NY"
+      ],
+      "position": "early",
+      "position_detail": "Line 11, preamble (~4% into document)",
+      "difficulty": "easy",
+      "section": "Preamble",
+      "scoring_notes": {
+        "exact": "New York (or State of New York, NY)",
+        "partial": "Names the correct party but wrong state, or confuses Client with Provider",
+        "incorrect": "Delaware (Provider's state), Virginia (subsidiary's state), or other wrong state"
+      },
+      "rationale": "Tests whether the model can distinguish between Provider (Delaware) and Client (New York) when both are stated in adjacent paragraphs with similar structure. Easy because it's early and clearly labeled, but introduces a mild confusion vector with two states named nearby."
+    },
+    {
+      "id": "Q05",
+      "question": "What is the aggregate liability cap that applies specifically to data breaches involving Personal Data?",
+      "ground_truth": "$5,000,000.00",
+      "acceptable_formats": [
+        "$5,000,000.00",
+        "$5,000,000",
+        "$5M",
+        "5 million dollars",
+        "Five Million Dollars",
+        "five million dollars"
+      ],
+      "position": "middle",
+      "position_detail": "Line 132, Section 8.3 (~53% into document)",
+      "difficulty": "medium",
+      "section": "Section 8 - Limitation of Liability",
+      "scoring_notes": {
+        "exact": "$5,000,000 in any standard format",
+        "partial": "Identifies Section 8.3 or 'Data Breach Liability Cap' but gives wrong amount, or gives the general cap ($2.5M) instead",
+        "incorrect": "$2,500,000 (general cap), $500,000 (per-incident), $7,500,000 (indemnification), or any other amount"
+      },
+      "rationale": "Core 'lost in the middle' test. Four different dollar caps appear within 16 lines of each other (Section 8.2-8.4, Section 9.3): $2.5M general, $5M data breach, $500K per-incident, $7.5M indemnification. The model must select the correct one. This is the quintessential extraction task where positional attention matters — the answer sits at ~53% of the document, right in the 'lost in the middle' zone."
+    },
+    {
+      "id": "Q06",
+      "question": "What is the maximum percentage of annual SOW fees that can be reimbursed as expenses?",
+      "ground_truth": "15%",
+      "acceptable_formats": [
+        "15%",
+        "fifteen percent",
+        "fifteen percent (15%)"
+      ],
+      "position": "middle",
+      "position_detail": "Line 80, Section 4.6 (~32% into document)",
+      "difficulty": "medium",
+      "section": "Section 4 - Compensation and Payment Terms",
+      "scoring_notes": {
+        "exact": "15% in any format",
+        "partial": "Identifies the Expense Cap concept but gives wrong percentage",
+        "incorrect": "5%, 10%, 20%, or 25% (service credit percentages), 50% (control threshold), 1.5% (late payment rate), or 99.5% (uptime)"
+      },
+      "rationale": "Tests extraction of a percentage figure embedded among many other percentages in the document. The 15% expense cap could be confused with service credit tiers (5%, 10%, 20%, 25%), the late payment rate (1.5%), the uptime commitment (99.5%), or the control threshold (50%). Dense contractual prose with cross-references makes this harder to isolate than a standalone figure."
+    },
+    {
+      "id": "Q07",
+      "question": "Who is the designated Technical Account Manager for SLA-related matters?",
+      "ground_truth": "Mr. Dominic W. Farrell",
+      "acceptable_formats": [
+        "Mr. Dominic W. Farrell",
+        "Dominic W. Farrell",
+        "Dominic Farrell"
+      ],
+      "position": "middle",
+      "position_detail": "Line 96, Section 5.5 (~39% into document)",
+      "difficulty": "medium",
+      "section": "Section 5 - Service Level Agreement",
+      "scoring_notes": {
+        "exact": "Dominic W. Farrell (with or without 'Mr.' prefix)",
+        "partial": "Correct first or last name but incomplete, or gives his title instead of name",
+        "incorrect": "Jonathan K. Ashworth (Provider's Authorized Rep), Diana L. Vasquez-Ortega (Client's Authorized Rep), Rachel Thornton-Webb (DPO), or any other name"
+      },
+      "rationale": "Tests ability to identify a specific named individual by role when multiple named individuals exist throughout the document. Farrell is buried in procedural SLA governance language at ~39% of the document, while Ashworth (Provider Auth Rep) and Vasquez-Ortega (Client Auth Rep) appear later in Section 10.4. The model must match 'Technical Account Manager' to the correct person, not default to the more prominently formatted Authorized Representatives."
+    },
+    {
+      "id": "Q08",
+      "question": "What is the per-incident liability cap for a single incident or related series of incidents?",
+      "ground_truth": "$500,000.00",
+      "acceptable_formats": [
+        "$500,000.00",
+        "$500,000",
+        "$500K",
+        "500,000 dollars",
+        "Five Hundred Thousand Dollars",
+        "five hundred thousand dollars"
+      ],
+      "position": "middle",
+      "position_detail": "Line 134, Section 8.4 (~54% into document)",
+      "difficulty": "medium",
+      "section": "Section 8 - Limitation of Liability",
+      "scoring_notes": {
+        "exact": "$500,000 in any standard format",
+        "partial": "Identifies per-incident concept but gives wrong amount",
+        "incorrect": "$2,500,000 (general cap), $5,000,000 (data breach cap), $7,500,000 (indemnification cap), or any other amount"
+      },
+      "rationale": "Second dollar-amount extraction from the liability cluster in the document's middle. Tests whether the model can correctly isolate the per-incident cap from the aggregate caps. This sits at 54% of the document, deep in the 'lost in the middle' zone, and the all-caps formatting of Section 8 creates a wall of text that's harder to parse than mixed-case prose."
+    },
+    {
+      "id": "Q09",
+      "question": "What is the current termination notice period for termination for convenience, taking into account all amendments in this agreement?",
+      "ground_truth": "60 days",
+      "acceptable_formats": [
+        "60 days",
+        "sixty (60) days",
+        "sixty days"
+      ],
+      "position": "late",
+      "position_detail": "Requires reading Line 178 (Section 11.1, ~72%) AND Line 190 (Section 12.1, ~77%)",
+      "difficulty": "hard",
+      "section": "Section 11 + Section 12 (cross-reference)",
+      "scoring_notes": {
+        "exact": "60 days in any format",
+        "partial": "Mentions both 90 and 60 days but doesn't resolve which is current, or says 'reduced from 90 to 60'",
+        "incorrect": "90 days (pre-amendment value), 30 days (cure period or force majeure notice), 120 days (force majeure threshold)"
+      },
+      "rationale": "The hardest question type for this experiment. Section 11.1 clearly states 90 days. Section 12.1 amends this to 60 days effective 03/01/2025. A model that reads Section 11 and stops (or loses attention by Section 12) will answer '90 days.' Only a model that processes the amendment language in the late portion of the document will correctly answer '60 days.' This directly tests the 'lost in the middle' hypothesis: the amendment is at ~77% of the document, a position where attention typically degrades."
+    },
+    {
+      "id": "Q10",
+      "question": "After all amendments, what is the service credit percentage for monthly availability below 98.0%?",
+      "ground_truth": "25%",
+      "acceptable_formats": [
+        "25%",
+        "twenty-five percent",
+        "twenty-five percent (25%)"
+      ],
+      "position": "late",
+      "position_detail": "Requires reading Line 90 (Section 5.3, ~36%) AND Line 192 (Section 12.2, ~77%)",
+      "difficulty": "hard",
+      "section": "Section 5 + Section 12 (cross-reference)",
+      "scoring_notes": {
+        "exact": "25% in any format",
+        "partial": "Mentions amendment exists but gives pre-amendment value (20%), or gives range like '20-25%'",
+        "incorrect": "20% (pre-amendment), 5% (tier a), 10% (tier b), 15% (expense cap), or any other percentage"
+      },
+      "rationale": "Requires cross-referencing two sections separated by ~40% of the document. Section 5.3(c) states 20%, while Section 12.2 amends it to 25%. The model must: (1) find the relevant tier in Section 5.3, (2) recognize that Section 12 contains amendments, (3) apply the amendment. This tests both positional retrieval and logical resolution across distant sections. The abundance of percentage figures (1.5%, 5%, 10%, 15%, 20%, 25%, 50%, 99.5%) makes this a strong disambiguation test."
+    },
+    {
+      "id": "Q11",
+      "question": "What is the name of the approved sub-processor, and under which state's laws is it organized?",
+      "ground_truth": "Meridian Analytics Federal Services, LLC; Commonwealth of Virginia",
+      "acceptable_formats": [
+        "Meridian Analytics Federal Services, LLC; Commonwealth of Virginia",
+        "Meridian Analytics Federal Services, LLC; Virginia",
+        "MAFS; Virginia",
+        "Meridian Analytics Federal Services, LLC, organized under the laws of the Commonwealth of Virginia"
+      ],
+      "position": "late",
+      "position_detail": "Line 172, Section 10.5 (~69% into document)",
+      "difficulty": "hard",
+      "section": "Section 10 - Data Protection",
+      "scoring_notes": {
+        "exact": "Both correct: entity name includes 'Meridian Analytics Federal Services' AND state is Virginia/Commonwealth of Virginia",
+        "partial": "Correct entity name but wrong or missing state, OR correct state but wrong entity (e.g., says 'Meridian Analytics Group' instead of 'Meridian Analytics Federal Services')",
+        "incorrect": "Meridian Analytics Group, Inc. (the Provider), Meridian Dynamics Corporation (the Client), Delaware, New York, or entirely wrong entity"
+      },
+      "rationale": "Three 'Meridian'-named entities exist: Meridian Analytics Group (Provider, Delaware), Meridian Dynamics Corporation (Client, New York), and Meridian Analytics Federal Services (sub-processor, Virginia). The model must identify the correct one AND its jurisdiction. The sub-processor is introduced late in the document in dense prose. 'Meridian Analytics Federal Services' is easily confused with 'Meridian Analytics Group' — only 'Federal Services' vs 'Group' distinguishes them. This tests entity disambiguation under name similarity at a late document position."
+    },
+    {
+      "id": "Q12",
+      "question": "How long must a Force Majeure Event persist before either Party has the right to terminate the agreement?",
+      "ground_truth": "120 days",
+      "acceptable_formats": [
+        "120 days",
+        "one hundred twenty (120) days",
+        "one hundred twenty days",
+        "more than 120 days"
+      ],
+      "position": "late",
+      "position_detail": "Line 222, Section 14.5 (~90% into document)",
+      "difficulty": "hard",
+      "section": "Section 14 - General Provisions",
+      "scoring_notes": {
+        "exact": "120 days in any format (accept 'more than 120 days' as exact)",
+        "partial": "Identifies Force Majeure section correctly but gives wrong duration, or confuses with the 30-day notice period that follows the 120-day threshold",
+        "incorrect": "30 days (notice period after FM threshold), 60 days (amended termination notice), 90 days (original termination notice or non-renewal notice), 5 business days (FM notification window), or any other duration"
+      },
+      "rationale": "Buried deep in the General Provisions boilerplate at ~90% of the document. Tests extraction from the zone where model attention is lowest. The 120-day figure is surrounded by other time periods (5 business days for notification, 30 days for termination notice post-FM), and the document contains many other day-counts (15, 30, 45, 60, 72, 90, 120) that create interference. A model with degraded attention in late-document positions will likely confuse this with a more salient time period."
+    },
+    {
+      "id": "Q13",
+      "question": "What are the Provider's standard hourly rates for a Data Engineer and a Project Manager?",
+      "ground_truth": "Data Engineer: $295.00/hour; Project Manager: $250.00/hour",
+      "acceptable_formats": [
+        "Data Engineer: $295.00/hour; Project Manager: $250.00/hour",
+        "$295 and $250",
+        "Data Engineer $295, Project Manager $250",
+        "Data Engineer: $295.00 per hour; Project Manager: $250.00 per hour",
+        "$295.00/hour and $250.00/hour"
+      ],
+      "position": "middle",
+      "position_detail": "Line 67, Section 4.1 (~27% into document)",
+      "difficulty": "medium",
+      "section": "Section 4 - Compensation and Payment Terms",
+      "scoring_notes": {
+        "exact": "Both rates correct and correctly attributed: Data Engineer $295(.00) AND Project Manager $250(.00)",
+        "partial": "One rate correct, other wrong or missing, OR both rates present but swapped/misattributed",
+        "incorrect": "Wrong rates entirely, or confuses with other dollar figures in the document"
+      },
+      "rationale": "Tests multi-value extraction where the model must pull two specific values from a list of four rates and correctly attribute each to the right role. The four rates ($375, $295, $250, $175) are listed sequentially in dense prose, testing whether the model can isolate the requested pair without bleeding in adjacent values. This also adds a structured multi-part extraction task to the dataset — all other questions ask for a single entity."
+    }
+  ]
+}

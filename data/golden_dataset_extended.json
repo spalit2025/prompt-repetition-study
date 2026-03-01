@@ -1,0 +1,395 @@
+  {
+    "metadata": {
+      "document": "data/contract_extended.md",
+      "document_word_count": 11707,
+      "document_line_count": 753,
+      "total_questions": 17,
+      "difficulty_distribution": {
+        "easy": 5,
+        "medium": 6,
+        "hard": 6
+      },
+      "position_distribution": {
+        "early": 5,
+        "middle": 6,
+        "late": 6
+      },
+      "document_structure": {
+        "part_1_msa": "Lines 15-267 (~2%-35%), ~4000 words",
+        "part_2_dpa": "Lines 268-595 (~36%-79%), ~4200 words",
+        "part_3_amendment": "Lines 596-753 (~79%-100%), ~2500 words"
+      },
+      "intentional_conflicts": 6,
+      "benchmark_config": {
+        "models": ["haiku"],
+        "variants": ["baseline", "vanilla_repetition"],
+        "runs_per_question": 5,
+        "rationale": "Haiku-only, baseline vs vanilla repetition. Testing whether document length (11.7K vs 4.2K words) is the variable that makes repetition matter."
+      },
+      "created": "2025-02-25",
+      "version": "1.0"
+    },
+    "questions": [
+      {
+        "id": "EQ01",
+        "question": "What is the effective date of the Master Services Agreement?",
+        "ground_truth": "January 15, 2025",
+        "acceptable_formats": [
+          "January 15, 2025",
+          "Jan 15, 2025",
+          "01/15/2025",
+          "1/15/2025",
+          "2025-01-15"
+        ],
+        "position": "early",
+        "position_detail": "Line 19, Part 1 preamble (~2.5% into document)",
+        "difficulty": "easy",
+        "section": "Part 1 - MSA Preamble",
+        "scoring_notes": {
+          "exact": "Any recognized date format resolving to January 15, 2025",
+          "partial": "Correct month and year but wrong day, or gives only '2025'",
+          "incorrect": "February 1, 2025 (DPA date), March 1, 2025 (internal amendment date), June 15, 2025 (Amendment Letter date), or any other date"
+        },
+        "rationale": "Baseline control. The MSA effective date is stated in the first few lines. At 11.7K words there are now four distinct dates in the document (Jan 15, Feb 1, Mar 1, Jun 15). Even this 'easy' question has more confounders than in the 4K-word version. If Haiku scores perfectly here in both variants, the baseline is calibrated."
+      },
+      {
+        "id": "EQ02",
+        "question": "What is the effective date of the Data Processing Addendum?",
+        "ground_truth": "February 1, 2025",
+        "acceptable_formats": [
+          "February 1, 2025",
+          "Feb 1, 2025",
+          "02/01/2025",
+          "2/1/2025",
+          "2025-02-01"
+        ],
+        "position": "early",
+        "position_detail": "Line 272, Part 2 preamble (~36% into document)",
+        "difficulty": "easy",
+        "section": "Part 2 - DPA Preamble",
+        "scoring_notes": {
+          "exact": "Any recognized date format resolving to February 1, 2025",
+          "partial": "Correct month and year but wrong day",
+          "incorrect": "January 15, 2025 (MSA date), June 15, 2025 (Amendment date), or any other date"
+        },
+        "rationale": "Easy but positioned at the boundary of Parts 1 and 2. The DPA date appears near the top of Part 2, which sits at ~36% of the total document. This tests whether the model's attention survives the transition from one document section to another. The date is stated clearly but could be confused with the MSA date (Jan 15) which appeared 250 lines earlier."
+      },
+      {
+        "id": "EQ03",
+        "question": "What is the initial term length of the Master Services Agreement?",
+        "ground_truth": "three (3) years",
+        "acceptable_formats": [
+          "three (3) years",
+          "3 years",
+          "three years"
+        ],
+        "position": "early",
+        "position_detail": "Line 71, Part 1, Section 3.1 (~9% into document)",
+        "difficulty": "easy",
+        "section": "Part 1 - MSA Section 3",
+        "scoring_notes": {
+          "exact": "3 years in any format",
+          "partial": "Identifies the correct section but gives wrong duration, or confuses with renewal term (1 year)",
+          "incorrect": "1 year (renewal term), or any other duration"
+        },
+        "rationale": "Straightforward early-document extraction. Serves as a control to verify Haiku's baseline attention on the first 10% of an 11.7K-word document. This should be trivially correct for both variants."
+      },
+      {
+        "id": "EQ04",
+        "question": "What is the General Liability Cap under the Master Services Agreement?",
+        "ground_truth": "$2,500,000.00",
+        "acceptable_formats": [
+          "$2,500,000.00",
+          "$2,500,000",
+          "$2.5M",
+          "$2.5 million",
+          "2.5 million dollars",
+          "Two Million Five Hundred Thousand Dollars"
+        ],
+        "position": "early",
+        "position_detail": "Line 144, Part 1, Section 8.2 (~19% into document)",
+        "difficulty": "easy",
+        "section": "Part 1 - MSA Section 8",
+        "scoring_notes": {
+          "exact": "$2,500,000 in any standard format",
+          "partial": "Identifies the General Liability Cap concept but gives wrong amount",
+          "incorrect": "$5,000,000 (Data Breach Cap), $500,000 (Per-Incident), $7,500,000 (Indemnification), $3,750,000 or $4,250,000 (DPA Cap), or any other amount"
+        },
+        "rationale": "Tests extraction of a dollar figure from a dense cluster of four liability caps in MSA Section 8. At 11.7K words, there are now six distinct liability caps across the full document (General $2.5M, Data Breach $5M, Per-Incident $500K, Indemnification $7.5M, DPA original $3.75M, DPA amended $4.25M). This easy question asks specifically for the General cap, which is clearly labeled. The extended document adds more confounders than the 4K version."
+      },
+      {
+        "id": "EQ05",
+        "question": "What is the Provider's standard hourly rate for a Data Engineer?",
+        "ground_truth": "$295.00",
+        "acceptable_formats": [
+          "$295.00",
+          "$295",
+          "$295.00 per hour",
+          "$295/hour",
+          "$295.00/hr",
+          "Two Hundred Ninety-Five Dollars"
+        ],
+        "position": "early",
+        "position_detail": "Line 81, Part 1, Section 4.1 (~11% into document)",
+        "difficulty": "easy",
+        "section": "Part 1 - MSA Section 4",
+        "scoring_notes": {
+          "exact": "$295 in any standard format",
+          "partial": "Correct role identified but wrong amount",
+          "incorrect": "$375 or $395 (Senior Data Scientist original/amended), $250 (Project Manager), $175 (Junior Analyst), $425 (AI Solutions Architect), or any other amount"
+        },
+        "rationale": "Control question for a rate that is NOT amended by the Amendment Letter. The Data Engineer rate stays $295 throughout all three parts. In the Amendment Letter (line 636), the unchanged rates are explicitly restated, which means the model encounters $295 twice. If Haiku gets this wrong, something is fundamentally broken at this document scale."
+      },
+      {
+        "id": "MQ06",
+        "question": "Who is the designated Data Protection Coordinator under the DPA, and what is their title?",
+        "ground_truth": "Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance",
+        "acceptable_formats": [
+          "Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance",
+          "Priya Nadkarni-Shah, Director of Data Privacy and Compliance",
+          "Dr. Priya Nadkarni-Shah"
+        ],
+        "position": "middle",
+        "position_detail": "Line 324, Part 2, DPA Section 3.1 (~43% into document)",
+        "difficulty": "medium",
+        "section": "Part 2 - DPA Section 3",
+        "scoring_notes": {
+          "exact": "Name includes 'Priya Nadkarni-Shah' AND title includes 'Data Privacy' or 'Data Protection Coordinator'",
+          "partial": "Correct name but wrong or missing title, OR correct title concept but wrong name",
+          "incorrect": "Rachel Thornton-Webb (Client's DPO), Erik P. Lindstrom (CISO), Samantha R. Blackwell (Vendor Management), or any MSA-named individual"
+        },
+        "rationale": "First true middle-of-document test. Dr. Nadkarni-Shah is a DPA-only individual introduced at 43% of the document, deep in Part 2. The model must distinguish her from five other named individuals: Rachel Thornton-Webb (Client DPO, mentioned nearby in line 330), Samantha Blackwell (line 370), Erik Lindstrom (line 400), and the MSA contacts. This tests whether attention degrades for a person entity at the start of the DPA's substantive content."
+      },
+      {
+        "id": "MQ07",
+        "question": "What encryption standard is required for Personal Data at rest under the DPA?",
+        "ground_truth": "AES-256",
+        "acceptable_formats": [
+          "AES-256",
+          "Advanced Encryption Standard with 256-bit key length",
+          "Advanced Encryption Standard with 256-bit key length (AES-256)",
+          "AES-256 encryption"
+        ],
+        "position": "middle",
+        "position_detail": "Line 382, Part 2, DPA Section 7.2 (~51% into document)",
+        "difficulty": "medium",
+        "section": "Part 2 - DPA Section 7",
+        "scoring_notes": {
+          "exact": "AES-256 or 'Advanced Encryption Standard with 256-bit key length'",
+          "partial": "Mentions AES but wrong key length, or says 'encryption' without specifying the standard",
+          "incorrect": "TLS 1.3 (transit encryption, not at-rest), or any other standard"
+        },
+        "rationale": "Tests extraction of a specific technical requirement from the dead center of the document (51%). DPA Section 7 contains dense security requirements including AES-256 (at rest), TLS 1.3 (in transit), SOC 2 Type II, and penetration testing. The model must extract the at-rest standard specifically, not the in-transit standard. This is a classic 'lost in the middle' target: the answer sits exactly at the midpoint of an 11.7K-word document."
+      },
+      {
+        "id": "MQ08",
+        "question": "What is the name of the independent third-party firm designated for annual penetration testing under the DPA?",
+        "ground_truth": "Whitmore-Kessler Security Consultants, Inc.",
+        "acceptable_formats": [
+          "Whitmore-Kessler Security Consultants, Inc.",
+          "Whitmore-Kessler Security Consultants",
+          "Whitmore-Kessler"
+        ],
+        "position": "middle",
+        "position_detail": "Line 390, Part 2, DPA Section 7.5 (~52% into document)",
+        "difficulty": "medium",
+        "section": "Part 2 - DPA Section 7",
+        "scoring_notes": {
+          "exact": "Name includes 'Whitmore-Kessler'",
+          "partial": "Correct concept (penetration testing firm) but wrong name, or gives the contact person (Gregory Whitmore) instead of the firm",
+          "incorrect": "Any sub-processor name from Schedule 2, or any other entity"
+        },
+        "rationale": "A named entity embedded in the exact center of the document at 52%. Whitmore-Kessler is mentioned once, in a paragraph surrounded by dense technical security requirements. Unlike the sub-processors (which appear in a formatted table), this firm appears in running prose. The model must extract a specific company name from the middle of a long technical section. At 11.7K words, this is the kind of entity that 'lost in the middle' predicts will be hardest to retrieve."
+      },
+      {
+        "id": "MQ09",
+        "question": "What is the retention period for transaction and financial data under the DPA?",
+        "ground_truth": "36 months",
+        "acceptable_formats": [
+          "36 months",
+          "thirty-six (36) months",
+          "thirty-six months",
+          "3 years"
+        ],
+        "position": "middle",
+        "position_detail": "Line 540, Part 2, Schedule 1 Section D (~72% into document)",
+        "difficulty": "medium",
+        "section": "Part 2 - DPA Schedule 1",
+        "scoring_notes": {
+          "exact": "36 months or 3 years in any format",
+          "partial": "Identifies the correct data category but gives wrong period",
+          "incorrect": "84 or 96 months (audit records original/amended), 18 months (marketing), 24 months (technical), 60 months (employee), 12 months (geolocation), 30 months (customer service), or any other period"
+        },
+        "rationale": "Tests extraction from a structured table in the DPA's Schedule 1 at 72% of the document. The retention period table contains eight different data categories with eight different durations, creating a dense extraction challenge. Transaction data (36 months) sits among audit records (84 months), marketing data (18 months), and five other categories. The model must match the correct category to the correct period. This is NOT amended by the Amendment Letter, so the ground truth is stable."
+      },
+      {
+        "id": "MQ10",
+        "question": "What is the retention period for marketing data and campaign records under the DPA?",
+        "ground_truth": "18 months",
+        "acceptable_formats": [
+          "18 months",
+          "eighteen (18) months",
+          "eighteen months",
+          "1.5 years"
+        ],
+        "position": "middle",
+        "position_detail": "Line 542, Part 2, Schedule 1 Section D (~72% into document)",
+        "difficulty": "medium",
+        "section": "Part 2 - DPA Schedule 1",
+        "scoring_notes": {
+          "exact": "18 months in any format",
+          "partial": "Identifies marketing data category but gives wrong period",
+          "incorrect": "36 months (transaction data), 84 or 96 months (audit records original/amended), 24 months (technical data), or any other period"
+        },
+        "rationale": "Companion to MQ09, testing a different row from the same retention table. Marketing data retention (18 months) is a shorter, less 'round' number that may be harder to recall. This value is NOT amended, distinguishing it from audit records (which IS amended from 84 to 96 months). If the model confuses marketing and audit retention periods, it reveals imprecise table parsing at the 72% mark."
+      },
+      {
+        "id": "MQ11",
+        "question": "Which approved sub-processor under the DPA is located in Tokyo, Japan, and what are its processing activities?",
+        "ground_truth": "Pacific Rim Analytics K.K.; Japanese market analytics processing, APPI-compliant data handling, localized natural language processing for Japanese-language data assets, and regional reporting",
+        "acceptable_formats": [
+          "Pacific Rim Analytics K.K.",
+          "Pacific Rim Analytics K.K.; Japanese market analytics",
+          "Pacific Rim Analytics K.K. — Japanese market analytics processing, APPI-compliant data handling, localized NLP, and regional reporting"
+        ],
+        "position": "middle",
+        "position_detail": "Line 565, Part 2, Schedule 2 (~75% into document)",
+        "difficulty": "medium",
+        "section": "Part 2 - DPA Schedule 2",
+        "scoring_notes": {
+          "exact": "Name includes 'Pacific Rim Analytics' (activities are a bonus, not required for exact)",
+          "partial": "Correct location (Tokyo) but wrong company name, or gives a Singapore-based sub-processor instead",
+          "incorrect": "Nexus Data Services Pte. Ltd. (Singapore, not Japan), Horizon Machine Learning Ltd. (Dublin), or any other sub-processor"
+        },
+        "rationale": "Tests extraction from row 7 of a 10-row sub-processor table at 75% of the document. The sub-processor list contains entities across six countries. Pacific Rim Analytics K.K. is the only Japan-based entity, but the model must scan through ten rows of dense table data to find it. At 11.7K words, this table sits in the 'deep middle' of the DPA where attention degradation is expected to be strongest."
+      },
+      {
+        "id": "HQ12",
+        "question": "After all amendments, what is the current hourly rate for a Senior Data Scientist?",
+        "ground_truth": "$395.00",
+        "acceptable_formats": [
+          "$395.00",
+          "$395",
+          "$395.00 per hour",
+          "$395/hour",
+          "$395.00/hr",
+          "Three Hundred Ninety-Five Dollars"
+        ],
+        "position": "late",
+        "position_detail": "Requires reading Line 81 (Part 1, ~11%) AND Line 632 (Part 3, ~84%)",
+        "difficulty": "hard",
+        "section": "Part 1 Section 4.1 + Part 3 Article I Section 1.1 (cross-reference)",
+        "scoring_notes": {
+          "exact": "$395 in any standard format",
+          "partial": "Mentions both $375 and $395 but doesn't resolve which is current, or says 'increased from $375 to $395'",
+          "incorrect": "$375 (pre-amendment value), $425 (AI Solutions Architect), $295 (Data Engineer), $250 (Project Manager), $175 (Junior Analyst)"
+        },
+        "rationale": "The first cross-reference conflict test. MSA Section 4.1 (line 81, 11% into document) states $375. The Amendment Letter (line 632, 84% into document) changes it to $395. The model must read 84% of the way through an 11.7K-word document to find the amendment, then override the value it encountered 73% earlier. If vanilla repetition helps Haiku attend to the amendment at line 632, this question will show the delta. The pre-amendment value ($375) has high salience because it appears in a formatted list early in Part 1."
+      },
+      {
+        "id": "HQ13",
+        "question": "After all amendments, how many continuous days must a Force Majeure Event persist before either Party may terminate the agreement?",
+        "ground_truth": "90 days",
+        "acceptable_formats": [
+          "90 days",
+          "ninety (90) days",
+          "ninety days",
+          "more than 90 days"
+        ],
+        "position": "late",
+        "position_detail": "Requires reading Line 236 (Part 1, ~31%) AND Line 648 (Part 3, ~86%)",
+        "difficulty": "hard",
+        "section": "Part 1 Section 14.5 + Part 3 Article I Section 1.3 (cross-reference)",
+        "scoring_notes": {
+          "exact": "90 days in any format (accept 'more than 90 days')",
+          "partial": "Mentions both 120 and 90 days but doesn't resolve which is current",
+          "incorrect": "120 days (pre-amendment value), 60 days (termination notice period), 30 days (various notice periods), or any other duration"
+        },
+        "rationale": "Cross-reference conflict between Part 1 and Part 3. The original MSA states 120 days (line 236, 31%). The Amendment Letter changes it to 90 days (line 648, 86%). This is especially tricky because '90 days' also appears elsewhere in the MSA (the original termination notice period in Section 11.1, before it was amended to 60 days in Section 12.1). The model faces a multi-level conflict resolution: MSA says 120 → Amendment says 90, but 90 also appears in a different MSA context. At 11.7K words, this tests whether the model can resolve a value that changes in the final 15% of the document."
+      },
+      {
+        "id": "HQ14",
+        "question": "Under the current terms, within how many hours must the Provider notify the Client of a Security Incident involving Personal Data processed under the DPA?",
+        "ground_truth": "36 hours",
+        "acceptable_formats": [
+          "36 hours",
+          "thirty-six (36) hours",
+          "thirty-six hours"
+        ],
+        "position": "late",
+        "position_detail": "Requires reading Line 170 (Part 1, ~23%), Line 424 (Part 2, ~56%), AND Line 679 (Part 3, ~90%)",
+        "difficulty": "hard",
+        "section": "Part 1 Section 10.2/10.3 + Part 2 DPA Section 9.1 + Part 3 Article II Section 2.2 (three-way cross-reference)",
+        "scoring_notes": {
+          "exact": "36 hours in any format",
+          "partial": "Mentions any two of the three timelines (48, 24, 36) without resolving to the current value",
+          "incorrect": "48 hours (MSA original), 24 hours (DPA original before amendment), 72 hours (written report deadline), or any other timeline"
+        },
+        "rationale": "The hardest question in the dataset. Three different notification timelines exist across the three parts: (1) MSA Sections 10.2/10.3 state 48 hours (line 170, 23%); (2) DPA Section 9.1 originally states 24 hours and explicitly supersedes the MSA for DPA-covered data (line 424, 56%); (3) the Amendment Letter changes the DPA timeline from 24 to 36 hours (line 679, 90%). The correct answer requires the model to: (a) recognize the question asks about DPA-processed data specifically; (b) find the DPA's 24-hour timeline; (c) find the Amendment's change to 36 hours; (d) not fall back to the MSA's 48-hour timeline. This is a three-hop cross-reference spanning 67% of the document, the strongest possible test of attention over a long context."
+      },
+      {
+        "id": "HQ15",
+        "question": "After all amendments, what is the DPA-specific liability cap for data processing violations?",
+        "ground_truth": "$4,250,000.00",
+        "acceptable_formats": [
+          "$4,250,000.00",
+          "$4,250,000",
+          "$4.25M",
+          "$4.25 million",
+          "4.25 million dollars",
+          "Four Million Two Hundred Fifty Thousand Dollars"
+        ],
+        "position": "late",
+        "position_detail": "Requires reading Line 450 (Part 2, ~60%) AND Line 697 (Part 3, ~93%)",
+        "difficulty": "hard",
+        "section": "Part 2 DPA Section 11.1 + Part 3 Article II Section 2.4 (cross-reference)",
+        "scoring_notes": {
+          "exact": "$4,250,000 in any standard format",
+          "partial": "Mentions both $3,750,000 and $4,250,000 but doesn't resolve which is current",
+          "incorrect": "$3,750,000 (DPA original), $2,500,000 (MSA General Cap), $5,000,000 (MSA Data Breach Cap), $7,500,000 (Indemnification Cap), $500,000 (Per-Incident Cap)"
+        },
+        "rationale": "Cross-reference conflict between Part 2 and Part 3 involving a dollar amount. The DPA originally sets the DPA Liability Cap at $3,750,000 (line 450, 60%). The Amendment Letter increases it to $4,250,000 (line 697, 93%). The document now contains six distinct liability caps, four in the MSA and two versions of the DPA cap. The model must: (1) identify the DPA-specific cap (not the MSA caps); (2) apply the amendment. This tests both document-section awareness and amendment resolution at 93% of the document."
+      },
+      {
+        "id": "HQ16",
+        "question": "Which Nexus-branded sub-processor is located in Germany, and which is located in Singapore?",
+        "ground_truth": "Nexus Data Solutions GmbH is in Frankfurt, Germany; Nexus Data Services Pte. Ltd. is in Singapore",
+        "acceptable_formats": [
+          "Nexus Data Solutions GmbH in Frankfurt, Germany; Nexus Data Services Pte. Ltd. in Singapore",
+          "Germany: Nexus Data Solutions GmbH; Singapore: Nexus Data Services Pte. Ltd.",
+          "Nexus Data Solutions GmbH (Germany), Nexus Data Services Pte. Ltd. (Singapore)"
+        ],
+        "position": "middle",
+        "position_detail": "Lines 561-562, Part 2, Schedule 2 (~74-75% into document)",
+        "difficulty": "hard",
+        "section": "Part 2 - DPA Schedule 2",
+        "scoring_notes": {
+          "exact": "Both correctly matched: 'Solutions GmbH' = Germany AND 'Services Pte. Ltd.' = Singapore",
+          "partial": "Identifies both entities but swaps their locations, or gets one correct and one wrong",
+          "incorrect": "Only names one entity, or confuses with non-Nexus sub-processors"
+        },
+        "rationale": "Name similarity trap. 'Nexus Data Solutions GmbH' and 'Nexus Data Services Pte. Ltd.' differ by a single word ('Solutions' vs 'Services') and by their legal suffixes (GmbH vs Pte. Ltd.). They appear on consecutive rows of the sub-processor table at 74-75% of the document. The model must correctly associate each variant with its country. The legal suffixes (GmbH = German, Pte. Ltd. = Singapore) provide disambiguation clues, but only if the model processes them precisely. This tests fine-grained entity disambiguation in the deep middle of a long document."
+      },
+      {
+        "id": "HQ17",
+        "question": "Who signed Amendment Letter No. 1 on behalf of the Provider (Meridian Analytics Group), and what is their title?",
+        "ground_truth": "Mr. Thomas J. Brennan, Chief Operating Officer",
+        "acceptable_formats": [
+          "Mr. Thomas J. Brennan, Chief Operating Officer",
+          "Thomas J. Brennan, Chief Operating Officer",
+          "Thomas Brennan, COO",
+          "Mr. Thomas J. Brennan, COO"
+        ],
+        "position": "late",
+        "position_detail": "Line 740, Part 3, Amendment Signature Block (~98% into document)",
+        "difficulty": "hard",
+        "section": "Part 3 - Amendment Signature Block",
+        "scoring_notes": {
+          "exact": "Name includes 'Thomas' and 'Brennan' AND title is 'Chief Operating Officer' or 'COO'",
+          "partial": "Correct name but wrong title, or correct title but wrong name",
+          "incorrect": "Dr. Alexander S. Reinholt (MSA/DPA signatory for Provider), Dr. Yuki Tanaka-Morrison (Amendment signatory for Client), Margaret Chen-Ramirez (MSA/DPA signatory for Client), or any other name"
+        },
+        "rationale": "Tests extraction from the absolute end of the document (98%). The MSA and DPA are both signed by Reinholt (Provider) and Chen-Ramirez (Client). The Amendment Letter is deliberately signed by different people: Brennan (Provider) and Tanaka-Morrison (Client). A model with degraded attention at the end of an 11.7K-word document may default to the more frequently mentioned signatories (Reinholt appears three times across Parts 1-2). This tests whether the model can distinguish 'who signed this specific document' when different signatories appear in different parts."
+      }
+    ]
+  }

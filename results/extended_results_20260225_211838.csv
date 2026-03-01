@@ -1,0 +1,146 @@
+model,variant,question_id,difficulty,position,run,raw_response,extracted_answer,score,needs_manual_review,input_tokens,output_tokens,latency_ms
+haiku-4.5,baseline,EQ01,easy,early,1,"January 15, 2025","January 15, 2025",1.0,False,18537,10,972
+haiku-4.5,baseline,EQ01,easy,early,2,"January 15, 2025","January 15, 2025",1.0,False,18537,10,783
+haiku-4.5,baseline,EQ01,easy,early,3,"January 15, 2025","January 15, 2025",1.0,False,18537,10,598
+haiku-4.5,baseline,EQ01,easy,early,4,"January 15, 2025","January 15, 2025",1.0,False,18537,10,15997
+haiku-4.5,baseline,EQ01,easy,early,5,"January 15, 2025","January 15, 2025",1.0,False,18537,10,20923
+haiku-4.5,baseline,EQ02,easy,early,1,"February 1, 2025","February 1, 2025",1.0,False,18539,10,21733
+haiku-4.5,baseline,EQ02,easy,early,2,"February 1, 2025","February 1, 2025",1.0,False,18539,10,21047
+haiku-4.5,baseline,EQ02,easy,early,3,"February 1, 2025","February 1, 2025",1.0,False,18539,10,19953
+haiku-4.5,baseline,EQ02,easy,early,4,"February 1, 2025","February 1, 2025",1.0,False,18539,10,21322
+haiku-4.5,baseline,EQ02,easy,early,5,"February 1, 2025","February 1, 2025",1.0,False,18539,10,20004
+haiku-4.5,baseline,EQ03,easy,early,1,Three (3) years,3 years,1.0,False,18538,8,21732
+haiku-4.5,baseline,EQ03,easy,early,2,Three (3) years,3 years,1.0,False,18538,8,20440
+haiku-4.5,baseline,EQ03,easy,early,3,Three (3) years,3 years,1.0,False,18538,8,20085
+haiku-4.5,baseline,EQ03,easy,early,4,Three (3) years,3 years,1.0,False,18538,8,20965
+haiku-4.5,baseline,EQ03,easy,early,5,Three (3) years,3 years,1.0,False,18538,8,21337
+haiku-4.5,baseline,EQ04,easy,early,1,"$2,500,000.00","$2,500,000",1.0,False,18539,11,19885
+haiku-4.5,baseline,EQ04,easy,early,2,"The General Liability Cap under the Master Services Agreement is **$2,500,000.00** (Two Million Five Hundred Thousand Dollars).","$2,500,000",1.0,False,18539,35,20822
+haiku-4.5,baseline,EQ04,easy,early,3,"The General Liability Cap under the Master Services Agreement is **Two Million Five Hundred Thousand Dollars ($2,500,000.00)**.","$2,500,000",1.0,False,18539,34,20291
+haiku-4.5,baseline,EQ04,easy,early,4,"The General Liability Cap under the Master Services Agreement is $2,500,000.00 (Two Million Five Hundred Thousand Dollars).","$2,500,000",1.0,False,18539,34,21269
+haiku-4.5,baseline,EQ04,easy,early,5,"$2,500,000.00","$2,500,000",1.0,False,18539,11,20146
+haiku-4.5,baseline,EQ05,easy,early,1,$295.00 per hour,$295.00,1.0,False,18540,10,21927
+haiku-4.5,baseline,EQ05,easy,early,2,$295.00 per hour,$295.00,1.0,False,18540,10,19168
+haiku-4.5,baseline,EQ05,easy,early,3,$295.00 per hour,$295.00,1.0,False,18540,10,21318
+haiku-4.5,baseline,EQ05,easy,early,4,$295.00 per hour,$295.00,1.0,False,18540,10,21264
+haiku-4.5,baseline,EQ05,easy,early,5,$295.00 per hour,$295.00,1.0,False,18540,10,20102
+haiku-4.5,baseline,MQ06,medium,middle,1,"Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance","Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance",1.0,False,18545,22,22302
+haiku-4.5,baseline,MQ06,medium,middle,2,"Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance","Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance",1.0,False,18545,22,19464
+haiku-4.5,baseline,MQ06,medium,middle,3,"**Dr. Priya Nadkarni-Shah**, Director of Data Privacy and Compliance","Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance",1.0,False,18545,23,21672
+haiku-4.5,baseline,MQ06,medium,middle,4,"Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance","Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance",1.0,False,18545,22,20324
+haiku-4.5,baseline,MQ06,medium,middle,5,"**Dr. Priya Nadkarni-Shah**, Director of Data Privacy and Compliance","Dr. Priya Nadkarni-Shah, Director of Data Privacy and Compliance",1.0,False,18545,23,20203
+haiku-4.5,baseline,MQ07,medium,middle,1,AES-256 (Advanced Encryption Standard with 256-bit key length),AES-256,1.0,False,18541,21,21537
+haiku-4.5,baseline,MQ07,medium,middle,2,AES-256 (Advanced Encryption Standard with 256-bit key length),AES-256,1.0,False,18541,21,20962
+haiku-4.5,baseline,MQ07,medium,middle,3,AES-256 (Advanced Encryption Standard with 256-bit key length),AES-256,1.0,False,18541,21,19079
+haiku-4.5,baseline,MQ07,medium,middle,4,AES-256 (Advanced Encryption Standard with 256-bit key length),AES-256,1.0,False,18541,21,21235
+haiku-4.5,baseline,MQ07,medium,middle,5,AES-256 (Advanced Encryption Standard with 256-bit key length),AES-256,1.0,False,18541,21,21980
+haiku-4.5,baseline,MQ08,medium,middle,1,"Whitmore-Kessler Security Consultants, Inc.","Whitmore-Kessler Security Consultants, Inc.",1.0,False,18548,18,20034
+haiku-4.5,baseline,MQ08,medium,middle,2,"Whitmore-Kessler Security Consultants, Inc.","Whitmore-Kessler Security Consultants, Inc.",1.0,False,18548,18,21316
+haiku-4.5,baseline,MQ08,medium,middle,3,"Whitmore-Kessler Security Consultants, Inc.","Whitmore-Kessler Security Consultants, Inc.",1.0,False,18548,18,19452
+haiku-4.5,baseline,MQ08,medium,middle,4,"# Answer
+
+**Whitmore-Kessler Security Consultants, Inc.**","Whitmore-Kessler Security Consultants, Inc.",1.0,False,18548,22,21338
+haiku-4.5,baseline,MQ08,medium,middle,5,"Whitmore-Kessler Security Consultants, Inc.","Whitmore-Kessler Security Consultants, Inc.",1.0,False,18548,18,20685
+haiku-4.5,baseline,MQ09,medium,middle,1,36 months from date of collection,36 months,1.0,False,18541,11,21617
+haiku-4.5,baseline,MQ09,medium,middle,2,36 months from date of collection,36 months,1.0,False,18541,11,19217
+haiku-4.5,baseline,MQ09,medium,middle,3,"# Answer
+
+The retention period for transaction and financial data under the DPA is **thirty-six (36) months from date of collection**.
+
+This is specified in Schedule 1, Section D of the Data Processing Addendum, with the basis listed as ""Contractual necessity and tax compliance obligations.""",36 months,1.0,False,18541,66,22981
+haiku-4.5,baseline,MQ09,medium,middle,4,"The retention period for transaction and financial data under the DPA is **thirty-six (36) months from date of collection**.
+
+This is specified in Schedule 1, Section D (Retention Periods) of the Data Processing Addendum, with the basis listed as ""Contractual necessity and tax compliance obligations.""",36 months,1.0,False,18541,69,18945
+haiku-4.5,baseline,MQ09,medium,middle,5,The retention period for transaction and financial data under the DPA is thirty-six (36) months from date of collection.,36 months,1.0,False,18541,28,20320
+haiku-4.5,baseline,MQ10,medium,middle,1,The retention period for marketing data and campaign records under the DPA is **18 months from last interaction with Data Subject**.,18 months,1.0,False,18542,28,22629
+haiku-4.5,baseline,MQ10,medium,middle,2,"According to Schedule 1, Section D of the DPA, the retention period for marketing data and campaign records is **eighteen (18) months from last interaction with Data Subject**.",18 months,1.0,False,18542,39,19883
+haiku-4.5,baseline,MQ10,medium,middle,3,"# Answer
+
+The retention period for marketing data and campaign records under the DPA is **eighteen (18) months from last interaction with Data Subject**.
+
+This is specified in Schedule 1, Section D of the Data Processing Addendum (DPA-2025-0892-A).",18 months,1.0,False,18542,63,20802
+haiku-4.5,baseline,MQ10,medium,middle,4,"# Answer
+
+The retention period for marketing data and campaign records under the DPA is **eighteen (18) months from last interaction with Data Subject**.
+
+This is specified in Schedule 1, Section D (Retention Periods) of the Data Processing Addendum.",18 months,1.0,False,18542,58,20659
+haiku-4.5,baseline,MQ10,medium,middle,5,The retention period for marketing data and campaign records under the DPA is **eighteen (18) months from last interaction with Data Subject**.,18 months,1.0,False,18542,30,21623
+haiku-4.5,baseline,MQ11,medium,middle,1,"# Answer
+
+**Sub-Processor:** Pacific Rim Analytics K.K.
+
+**Location:** Tokyo, Japan
+
+**Processing Activities:** Japanese market analytics processing, APPI-compliant data handling, localized natural language processing for Japanese-language data assets, and regional reporting",Pacific Rim Analytics K.K.,1.0,False,18549,61,19903
+haiku-4.5,baseline,MQ11,medium,middle,2,"# Answer
+
+**Pacific Rim Analytics K.K.**, located in Tokyo, Japan, is the approved sub-processor under the DPA.
+
+**Processing Activities:**
+- Japanese market analytics processing
+- APPI-compliant data handling
+- Localized natural language processing for Japanese-language data assets
+- Regional reporting",Pacific Rim Analytics K.K.,1.0,False,18549,72,22311
+haiku-4.5,baseline,MQ11,medium,middle,3,"**Pacific Rim Analytics K.K., located in Tokyo, Japan, is an approved sub-processor under the DPA with processing activities of: Japanese market analytics processing, APPI-compliant data handling, localized natural language processing for Japanese-language data assets, and regional reporting.**",Pacific Rim Analytics K.K.,1.0,False,18549,63,21589
+haiku-4.5,baseline,MQ11,medium,middle,4,"# Answer
+
+**Sub-Processor:** Pacific Rim Analytics K.K.
+
+**Location:** Tokyo, Japan
+
+**Processing Activities:** Japanese market analytics processing, APPI-compliant data handling, localized natural language processing for Japanese-language data assets, and regional reporting",Pacific Rim Analytics K.K.,1.0,False,18549,61,17869
+haiku-4.5,baseline,MQ11,medium,middle,5,"# Answer
+
+**Sub-Processor:** Pacific Rim Analytics K.K.
+
+**Location:** Tokyo, Japan
+
+**Processing Activities:** Japanese market analytics processing, APPI-compliant data handling, localized natural language processing for Japanese-language data assets, and regional reporting",Pacific Rim Analytics K.K.,1.0,False,18549,61,20941
+haiku-4.5,baseline,HQ12,hard,late,1,$395.00,$395.00,1.0,False,18544,7,20758
+haiku-4.5,baseline,HQ12,hard,late,2,$395.00 per hour,$395.00,1.0,False,18544,10,20410
+haiku-4.5,baseline,HQ12,hard,late,3,$395.00 per hour,$395.00,1.0,False,18544,10,20550
+haiku-4.5,baseline,HQ12,hard,late,4,$395.00 per hour,$395.00,1.0,False,18544,10,20052
+haiku-4.5,baseline,HQ12,hard,late,5,$395.00 per hour,$395.00,1.0,False,18544,10,22592
+haiku-4.5,baseline,HQ13,hard,late,1,90 days,90 days,1.0,False,18550,7,20954
+haiku-4.5,baseline,HQ13,hard,late,2,90 days,90 days,1.0,False,18550,7,21099
+haiku-4.5,baseline,HQ13,hard,late,3,90 days,90 days,1.0,False,18550,7,20742
+haiku-4.5,baseline,HQ13,hard,late,4,90 days,90 days,1.0,False,18550,7,19476
+haiku-4.5,baseline,HQ13,hard,late,5,90 days,90 days,1.0,False,18550,7,20975
+haiku-4.5,baseline,HQ14,hard,late,1,36 hours,36 hours,1.0,False,18555,7,20858
+haiku-4.5,baseline,HQ14,hard,late,2,**36 hours**,36 hours,1.0,False,18555,8,22033
+haiku-4.5,baseline,HQ14,hard,late,3,36 hours,36 hours,1.0,False,18555,7,20612
+haiku-4.5,baseline,HQ14,hard,late,4,36 hours,36 hours,1.0,False,18555,7,20349
+haiku-4.5,baseline,HQ14,hard,late,5,36 hours,36 hours,1.0,False,18555,7,20770
+haiku-4.5,baseline,HQ15,hard,late,1,"$4,250,000.00","$4,250,000",1.0,False,18544,11,20791
+haiku-4.5,baseline,HQ15,hard,late,2,"$4,250,000.00","$4,250,000",1.0,False,18544,11,20743
+haiku-4.5,baseline,HQ15,hard,late,3,"$4,250,000.00","$4,250,000",1.0,False,18544,11,19949
+haiku-4.5,baseline,HQ15,hard,late,4,"$4,250,000.00","$4,250,000",1.0,False,18544,11,19998
+haiku-4.5,baseline,HQ15,hard,late,5,"$4,250,000.00","$4,250,000",1.0,False,18544,11,25024
+haiku-4.5,baseline,HQ16,hard,middle,1,"Based on Schedule 2 of the Data Processing Addendum:
+
+**Germany:** Nexus Data Solutions GmbH (Frankfurt, Germany)
+
+**Singapore:** Nexus Data Services Pte. Ltd. (Singapore)",Nexus Data Solutions GmbH (Germany); Nexus Data Services Pte. Ltd. (Singapore),1.0,False,18547,52,16614
+haiku-4.5,baseline,HQ16,hard,middle,2,"Based on Schedule 2 (Approved Sub-Processors) of the Data Processing Addendum:
+
+- **Germany**: Nexus Data Solutions GmbH (Frankfurt, Germany)
+- **Singapore**: Nexus Data Services Pte. Ltd. (Singapore)",Nexus Data Solutions GmbH (Germany); Nexus Data Services Pte. Ltd. (Singapore),1.0,False,18547,62,22849
+haiku-4.5,baseline,HQ16,hard,middle,3,"# Answer
+
+**Nexus Data Solutions GmbH** is located in **Germany**.
+
+**Nexus Data Services Pte. Ltd.** is located in **Singapore**.",Nexus Data Solutions GmbH (Germany); Nexus Data Services Pte. Ltd. (Singapore),1.0,False,18547,42,20074
+haiku-4.5,baseline,HQ16,hard,middle,4,"Based on the document, specifically Schedule 2 (Approved Sub-Processors) of the DPA:
+
+- **Germany**: Nexus Data Solutions GmbH (located in Frankfurt, Germany)
+- **Singapore**: Nexus Data Services Pte. Ltd. (located in Singapore)",Nexus Data Solutions GmbH (Germany); Nexus Data Services Pte. Ltd. (Singapore),1.0,False,18547,67,19395
+haiku-4.5,baseline,HQ16,hard,middle,5,"# Answer
+
+**Germany:** Nexus Data Solutions GmbH (Frankfurt)
+
+**Singapore:** Nexus Data Services Pte. Ltd.",Nexus Data Solutions GmbH (Germany); Nexus Data Services Pte. Ltd. (Singapore),1.0,False,18547,35,21211
+haiku-4.5,baseline,HQ17,hard,late,1,"Mr. Thomas J. Brennan, Chief Operating Officer","Mr. Thomas J. Brennan, Chief Operating Officer",1.0,False,18553,15,21941
+haiku-4.5,baseline,HQ17,hard,late,2,"Mr. Thomas J. Brennan, Chief Operating Officer","Mr. Thomas J. Brennan, Chief Operating Officer",1.0,False,18553,15,19740
+haiku-4.5,baseline,HQ17,hard,late,3,"Mr. Thomas J. Brennan, Chief Operating Officer","Mr. Thomas J. Brennan, Chief Operating Officer",1.0,False,18553,15,21063
+haiku-4.5,baseline,HQ17,hard,late,4,"**Mr. Thomas J. Brennan, Chief Operating Officer**","Mr. Thomas J. Brennan, Chief Operating Officer",1.0,False,18553,17,19279
+haiku-4.5,baseline,HQ17,hard,late,5,"Mr. Thomas J. Brennan, Chief Operating Officer","Mr. Thomas J. Brennan, Chief Operating Officer",1.0,False,18553,15,21202
