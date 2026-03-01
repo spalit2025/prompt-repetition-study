@@ -53,13 +53,13 @@ MODELS = {
         "output_cost_per_mtok": 5.00,
     },
     "sonnet-4.5": {
-        "model_id": "claude-sonnet-4-5-20241022",
+        "model_id": "claude-sonnet-4-5-20250929",
         "thinking": False,
         "input_cost_per_mtok": 3.00,
         "output_cost_per_mtok": 15.00,
     },
     "sonnet-4.5-thinking": {
-        "model_id": "claude-sonnet-4-5-20241022",
+        "model_id": "claude-sonnet-4-5-20250929",
         "thinking": True,
         "thinking_budget": 10000,
         "input_cost_per_mtok": 3.00,
