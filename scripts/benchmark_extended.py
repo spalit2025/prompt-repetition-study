@@ -20,7 +20,6 @@ import os
 import argparse
 from pathlib import Path
 from datetime import datetime
-from collections import defaultdict
 
 # Load .env file from project root if it exists
 _env_path = Path(__file__).parent.parent / ".env"

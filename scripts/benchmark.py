@@ -21,7 +21,6 @@ import os
 import argparse
 from pathlib import Path
 from datetime import datetime
-from collections import defaultdict
 
 # Load .env file from project root if it exists
 _env_path = Path(__file__).parent.parent / ".env"
@@ -53,14 +52,14 @@ MODELS = {
         "input_cost_per_mtok": 1.00,
         "output_cost_per_mtok": 5.00,
     },
-    "sonnet-4": {
-        "model_id": "claude-sonnet-4-20250514",
+    "sonnet-4.5": {
+        "model_id": "claude-sonnet-4-5-20241022",
         "thinking": False,
         "input_cost_per_mtok": 3.00,
         "output_cost_per_mtok": 15.00,
     },
-    "sonnet-4-thinking": {
-        "model_id": "claude-sonnet-4-20250514",
+    "sonnet-4.5-thinking": {
+        "model_id": "claude-sonnet-4-5-20241022",
         "thinking": True,
         "thinking_budget": 10000,
         "input_cost_per_mtok": 3.00,
